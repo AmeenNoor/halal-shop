@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['halal-shop.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', 'localhost']
 
 
 # Application definition
