@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+      <!-- Product Image Section -->
+      <div class="col-md-6 mb-3">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+      </div>
+  
+      <!-- Product Details Section -->
+      <div class="col-md-6 mb-3">
+        <h2>Product Name</h2>
+        <p class="lead">€ {{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        
+        <h3>Quantity:</h3>
+        <!-- Quantity Section -->
+        <div class="input-group mb-5 w-50">
+          <button class="btn btn-outline-secondary" type="button">-</button>
+          <input type="text" class="form-control text-center" placeholder="Quantity" aria-label="Quantity" aria-describedby="quantity-addon" value="1">
+          <button class="btn btn-outline-secondary" type="button">+</button>
+        </div>
+  
+        <!-- Add to Cart Button -->
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+</div>
+{% endblock %}
