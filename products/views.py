@@ -18,3 +18,11 @@ class ProductList(ListView):
     model = Product
     context_object_name = "products"
     template_name = "product_list.html"
+
+class ProductDetail(DetailView):
+    """
+    View to display product details
+    """
+
+    model = Product
+    template_name = "product_detail.html"
