@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% endblock %}
+
+  {% block corecss %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  {% endblock %}
+  
+  {% block corejs %}
+    <!-- Bootstrap JS and Popper.js (Required) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  {% endblock %}
+
+  <title>Halal Shop</title>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <!-- Section 1 -->
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container py-4">
+        <a class="navbar-brand" href="#">Keep it halal 100%</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavTop" aria-controls="navbarNavTop" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavTop">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <form class="d-flex">
+                <div class="input-group">
+                  <input class="form-control form-control-md me-1 w-75" type="search" placeholder="Search" aria-label="Search">
+                  <button class="input-group-text"><i class="fas fa-search"></i></button>
+                </div>
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Section 2 -->
+    <div class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavBottom" aria-controls="navbarNavBottom" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavBottom">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+<!-- Main Content -->
+
+
+<!-- Footer -->
+<footer class="bg-dark text-light mt-4">
+    <div class="container py-5">
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-lg-6">
+          <h5>Contact Us</h5>
+          <address>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Street, Cityville, Country</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:info@example.com">info@example.com</a></p>
+            <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+          </address>
+        </div>
+  
+        <!-- Social Media Icons -->
+        <div class="col-lg-4">
+          <h5>Connect With Us</h5>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+  
+</body>
+</html>
