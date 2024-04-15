@@ -27,7 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if 'USE_AWS' in os.environ:
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-5njuuq92ys5.ws-eu110.gitpod.io']
 
@@ -63,7 +66,10 @@ ROOT_URLCONF = 'halal_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS':  [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'products', 'templates', 'products'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
