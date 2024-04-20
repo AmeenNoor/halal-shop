@@ -18,6 +18,7 @@ class ProductList(ListView):
     model = Product
     context_object_name = "products"
     template_name = "product_list.html"
+    
 
 class ProductDetail(DetailView):
     """
