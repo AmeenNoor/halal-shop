@@ -2,22 +2,20 @@
 {% load static %}
 {% block content %}
 <div class="container mt-4">
-  <!-- Sort By Dropdown -->
+  <!-- Sort By Select -->
   <div class="row">
     <div class="col-lg-12">
       <div class="row justify-content-end">
-        <div class="col-md-6 mb-4">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle float-end" type="button" id="sortByDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              Sort By
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="sortByDropdown">
-              <li><a class="dropdown-item" href="#" id="sortByName">Name: A - Z</a></li>
-              <li><a class="dropdown-item" href="#" id="sortByPrice">Name: Z - A</a></li>
-              <li><a class="dropdown-item" href="#" id="sortByName">Price: low to hight</a></li>
-              <li><a class="dropdown-item" href="#" id="sortByPrice">Price: high to low</a></li>
-            </ul>
-          </div>
+        <div class="col-md-2 mb-4">
+          <label for="sortBySelect" class="form-label visually-hidden">Sort By</label>
+          <select class="form-select float-end" id="sortBySelect">
+            <option selected>Default sorting</option>
+            <option value="name-asc">Sort by Name: A - Z</option>
+            <option value="name-desc">Sort by Name: Z - A</option>
+            <option value="latest">Sort by Latest</option>
+            <option value="price-asc">Sort by Price: low to high</option>
+            <option value="price-desc">Sort by Price: high to low</option>
+          </select>
         </div>
       </div>
     </div>
