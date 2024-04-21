@@ -13,16 +13,16 @@
               Shop
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">All Products</a></li>
-              <li><a class="dropdown-item" href="#">Meat & Poultry</a></li>
-              <li><a class="dropdown-item" href="#">Seafood</a></li>
-              <li><a class="dropdown-item" href="#">Dairy & Eggs</a></li>
-              <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
-              <li><a class="dropdown-item" href="#">Grains & Flour</a></li>
-              <li><a class="dropdown-item" href="#">Spices & Seasonings</a></li>
-              <li><a class="dropdown-item" href="#">Frozen Foods</a></li>
-              <li><a class="dropdown-item" href="#">Canned & Packaged Foods</a></li>
-              <li><a class="dropdown-item" href="#">Drinks</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Meat & Poultry'|urlencode }}"">Meat & Poultry</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Seafood'|urlencode }}"">Seafood</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Dairy & Eggs'|urlencode }}"">Dairy & Eggs</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Fruits & Vegetables'|urlencode }}"">Fruits & Vegetables</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Grains & Flour'|urlencode }}"">Grains & Flour</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Spices & Seasonings'|urlencode }}"">Spices & Seasonings</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Frozen Foods'|urlencode }}"">Frozen Foods</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Canned & Packaged Foods'|urlencode }}"">Canned & Packaged Foods</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}?category={{ 'Drinks'|urlencode }}"">Drinks</a></li>
             </ul>
           </li>
           <li class="nav-item">
