@@ -20,11 +20,25 @@ class ProductList(ListView):
     template_name = "product_list.html"
 
     def get_queryset(self):
+        sort_by = self.request.GET.get('sort_by')
         category = self.request.GET.get('category')
+        queryset = Product.objects.all()
+
         if category:
-            return Product.objects.filter(category=category)
-        else:
-            return Product.objects.all()
+            queryset = queryset.filter(category=category)
+
+        if sort_by == 'name_asc':
+            queryset = queryset.order_by('name')
+        elif sort_by == 'name_desc':
+            queryset = queryset.order_by('-name')
+        elif sort_by == 'latest':
+            queryset = queryset.order_by('-id') 
+        elif sort_by == 'price_asc':
+            queryset = queryset.order_by('price')
+        elif sort_by == 'price_desc':
+            queryset = queryset.order_by('-price')
+
+        return queryset
     
 
 class ProductDetail(DetailView):
