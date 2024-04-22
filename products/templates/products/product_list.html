@@ -8,7 +8,6 @@
       <div class="row justify-content-end">
         <div class="col-md-2 mb-4">
           <form method="GET" action="{% url 'products' %}" id="sortForm">
-            <label for="sortBySelect" class="form-label visually-hidden">Sort By</label>
             <select class="form-select float-end" id="sortBySelect" name="sort_by" onchange="this.form.submit()">
               <option value="" {% if not request.GET.sort_by %}selected{% endif %}>Default sorting</option>
               <option value="name_asc" {% if request.GET.sort_by == 'name_asc' %}selected{% endif %}>Sort by Name: A - Z</option>
