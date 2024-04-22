@@ -7,6 +7,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.db.models import Q
 from .models import Product
 
 
@@ -22,10 +23,16 @@ class ProductList(ListView):
     def get_queryset(self):
         sort_by = self.request.GET.get('sort_by')
         category = self.request.GET.get('category')
+        search_query = self.request.GET.get('q')
         queryset = Product.objects.all()
 
         if category:
             queryset = queryset.filter(category=category)
+        
+        if search_query:
+            queryset = queryset.filter(
+                Q(name__icontains=search_query) | Q(category__icontains=search_query)
+            )
 
         if sort_by == 'name_asc':
             queryset = queryset.order_by('name')
