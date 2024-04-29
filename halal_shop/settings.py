@@ -32,7 +32,7 @@ if 'USE_AWS' in os.environ:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-5njuuq92ys5.ws-eu110.gitpod.io', '127.0.0.1']
+ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-rp2gksx2dds.ws-eu110.gitpod.io']
 
 
 # Application definition
@@ -53,6 +53,8 @@ INSTALLED_APPS = [
 
     #Other
     'storages',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -67,11 +69,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'halal_shop.urls'
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':  [
             os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
             os.path.join(BASE_DIR, 'products', 'templates', 'products'),
         ],
         'APP_DIRS': True,
