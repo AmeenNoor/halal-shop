@@ -80,3 +80,12 @@ class ProductUpdate(LoginRequiredMixin, UpdateView):
     form_class = ProductForm
     template_name = 'product_update.html'
     success_url = reverse_lazy('products')
+
+class ProductDelete(LoginRequiredMixin, DeleteView):
+    """
+    View to delete an existing product
+    """
+
+    model = Product
+    template_name = 'product_delete.html'
+    success_url = reverse_lazy('products')
