@@ -7,6 +7,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from .models import Product
 
@@ -28,10 +30,11 @@ class ProductList(ListView):
 
         if category:
             queryset = queryset.filter(category=category)
-        
+
         if search_query:
             queryset = queryset.filter(
-                Q(name__icontains=search_query) | Q(category__icontains=search_query)
+                Q(name__icontains=search_query) | Q(
+                    category__icontains=search_query)
             )
 
         if sort_by == 'name_asc':
@@ -39,14 +42,14 @@ class ProductList(ListView):
         elif sort_by == 'name_desc':
             queryset = queryset.order_by('-name')
         elif sort_by == 'latest':
-            queryset = queryset.order_by('-id') 
+            queryset = queryset.order_by('-id')
         elif sort_by == 'price_asc':
             queryset = queryset.order_by('price')
         elif sort_by == 'price_desc':
             queryset = queryset.order_by('-price')
 
         return queryset
-    
+
 
 class ProductDetail(DetailView):
     """
@@ -56,3 +59,13 @@ class ProductDetail(DetailView):
     model = Product
     template_name = 'product_detail.html'
     context_object_name = 'product'
+
+class ProductCreate(LoginRequiredMixin, CreateView):
+    """
+    View to create a new product
+    """
+
+    model = Product
+    fields = ['name', 'description', 'price', 'category', 'image']
+    template_name = 'product_create.html'
+    success_url = reverse_lazy('products')
