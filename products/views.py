@@ -70,3 +70,13 @@ class ProductCreate(LoginRequiredMixin, CreateView):
     form_class = ProductForm
     template_name = 'product_create.html'
     success_url = reverse_lazy('products')
+
+class ProductUpdate(LoginRequiredMixin, UpdateView):
+    """
+    View to update an existing product
+    """
+
+    model = Product
+    form_class = ProductForm
+    template_name = 'product_update.html'
+    success_url = reverse_lazy('products')
