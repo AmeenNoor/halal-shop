@@ -1,0 +1,17 @@
+<!-- Delete Product -->
+{% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} 
+{% block content %}
+  <div class="container mt-4">
+      <h2 class="card-title text-center mb-4">Confirm Delete</h2>
+      <p class="card-title text-center mb-4">Are you sure you want to delete "{{ object }}"?</p>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="row justify-content-center mb-4">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a href="{% url 'products' %}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+      </form>
+  </div>
+{% endblock %}
