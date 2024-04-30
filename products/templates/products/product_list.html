@@ -54,7 +54,7 @@
                     </div>
                   </div>
                   <div class="col-auto">
-                    <a href="#" class="btn btn-danger">Delete</a>                    
+                    <a href="{% url 'product_delete' pk=product.id %}" class="btn btn-danger">Delete</a>                    
                   </div>
                 </div>
                 {% endif %}
