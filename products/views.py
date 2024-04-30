@@ -11,6 +11,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from .models import Product
+from .forms import ProductForm
 
 
 class ProductList(ListView):
@@ -66,6 +67,6 @@ class ProductCreate(LoginRequiredMixin, CreateView):
     """
 
     model = Product
-    fields = ['name', 'description', 'price', 'category', 'image']
+    form_class = ProductForm
     template_name = 'product_create.html'
     success_url = reverse_lazy('products')
