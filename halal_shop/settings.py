@@ -32,7 +32,7 @@ if 'USE_AWS' in os.environ:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-rp2gksx2dds.ws-eu110.gitpod.io']
+ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-rp2gksx2dds.ws-eu111.gitpod.io']
 
 
 # Application definition

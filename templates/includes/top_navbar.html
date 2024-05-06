@@ -34,7 +34,7 @@
                 <i class="fas fa-user"></i> Hello, {{ user }}
               </a>
               <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="#">Product Management</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}">Product Management</a></li>
                 <li><a class="dropdown-item" href="#">User Management</a></li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a></li>
               </ul>
