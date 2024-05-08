@@ -19,7 +19,9 @@
             <tbody>
               {% for item_id, item in cart_items.items %}
               <tr>
-                <td><img src="{{ item.image_url }}" alt="{{ item.name }}" class="img-fluid" style="max-width: 100px;"></td>
+                <td>
+                  <a href="{% url 'product_detail' pk=item_id %}"><img src="{{ item.image_url }}" alt="{{ item.name }}" class="img-fluid" style="max-width: 100px;"></a>
+                </td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.quantity }}</td>
                 <td>$ {{ item.price }}</td>
