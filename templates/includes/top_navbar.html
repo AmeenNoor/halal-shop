@@ -20,7 +20,7 @@
       <ul class="navbar-nav">
         <li class="nav-item me-3 dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-shopping-cart"></i> € <span id="cartTotal">00.00</span>
+            <i class="fas fa-shopping-cart"></i> € <span id="cartTotal">{% if subtotal %}{{ subtotal|floatformat:2 }}{% else %}0.00{% endif %}</span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="cartDropdown">
             <li><a class="dropdown-item" href="#">Checkout</a></li>
