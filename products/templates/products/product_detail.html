@@ -15,15 +15,25 @@
         <p>{{ product.description }}</p>
         <h3>Quantity:</h3>
         <!-- Quantity Section -->
-        <div class="input-group mb-5 w-50">
-          <button class="btn btn-outline-secondary" type="button">-</button>
-          <input type="text" class="form-control text-center" placeholder="Quantity" aria-label="Quantity" aria-describedby="quantity-addon" value="1">
-          <button class="btn btn-outline-secondary" type="button">+</button>
-        </div>
+        <form method="post" action="{% url 'cart_add' %}">
+          {% csrf_token %}
+          <div class="input-group mb-5 w-50">
+            <button class="btn btn-outline-secondary" type="button" onclick="decrementQuantity()">-</button>
+            <input type="text" class="form-control text-center" placeholder="Quantity" aria-label="Quantity" name="quantity" id="quantity" value="1" min="1">
+            <button class="btn btn-outline-secondary" type="button" onclick="incrementQuantity()">+</button>
+          </div>
   
-        <!-- Add to Cart Button -->
-        <button class="btn btn-primary">Add to Cart</button>
+          <!-- Add to Cart Button -->
+          <input type="hidden" name="product_id" value="{{ product.id }}">
+          <button class="btn btn-primary">Add to Cart</button>
+        </form>
+
       </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
