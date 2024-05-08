@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 <div class="container my-5">
+  <div class="row">
+
+    <!-- Products Section -->
     <div class="col-lg-8">
         <h2>Products</h2>
         <!-- Table to display products -->
@@ -39,5 +42,30 @@
         </div>
     </div>
 
+    <!-- Order Summary Section -->
+    <div class="col-lg-4">
+      <div class="bg-light p-4">
+        <h2 class="mb-4">ORDER SUMMARY</h2>
+        <div class="d-flex justify-content-between mb-3">
+          <span>Subtotal:</span>
+          <span>$ {{ subtotal|floatformat:2 }}</span> 
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <span>Delivery fee:</span>
+          <span>$ {{ delivery|floatformat:2 }}</span> 
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between mb-3">
+          <span>Order Total:</span>
+          <span>$ {{ total|floatformat:2 }}</span>
+        </div>
+        <hr>
+   
+        <a href="#" class="btn btn-primary mb-2 d-block">Proceed to Checkout</a>
+        <a href="{% url 'products' %}" class="btn btn-secondary d-block">Continue Shopping</a>
+      </div>
+    </div>
+
+  </div>
 </div>
 {% endblock %}
