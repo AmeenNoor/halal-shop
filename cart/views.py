@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from products.models import Product
 from django.contrib import messages
 
@@ -28,3 +28,8 @@ class CartAddView(CreateView):
 
         messages.success(request, f"{product.name} added to cart.")
         return redirect('products')
+
+class CartListView(ListView):
+    def get(self, request):
+        cart_items = request.session.get('cart', {})
+        return render(request, 'cart/cart.html', {'cart_items': cart_items})
