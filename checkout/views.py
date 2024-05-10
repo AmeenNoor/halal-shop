@@ -81,7 +81,14 @@ class CheckoutView(LoginRequiredMixin, CreateView):
 
 class CheckoutSuccessView(View):
     def get(self, request):
-        return render(request, 'success.html')
+        order = Order.objects.filter(user=request.user).latest('date')
+        context = {
+            'order': order,
+            'order_items': order.items.all(), 
+            'order_subtotal': order.subtotal,
+            'delivery_fee': order.delivery_fee,
+        }
+        return render(request, 'success.html', context)
 
 
 class CheckoutCancelView(View):
