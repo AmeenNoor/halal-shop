@@ -88,6 +88,7 @@ class CheckoutSuccessView(View):
             'order_subtotal': order.subtotal,
             'delivery_fee': order.delivery_fee,
         }
+        request.session['cart'] = {}
         return render(request, 'success.html', context)
 
 
