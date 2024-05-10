@@ -1,11 +1,11 @@
+import stripe
+from django.conf import settings
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views.generic import CreateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CheckoutForm
 from .models import Order, OrderItem
-import stripe
-from django.conf import settings
-from django.urls import reverse
 from products.models import Product
 from django.contrib import messages
 from cart.contexts import cart_total

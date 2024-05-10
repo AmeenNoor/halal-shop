@@ -23,7 +23,7 @@
                 {% for item_id, item in cart_items.items %}
                 <div class="d-flex justify-content-between mb-2">
                     <span>{{ item.name }} x {{ item.quantity }}</span>
-                    <span>$ {{ item.price|floatformat:2 }}</span>
+                    <span>$ {{ item.total_per_quantity|floatformat:2 }}</span>
                 </div>
                 {% endfor %}
                 <hr>

@@ -8,7 +8,11 @@ def cart_total(request):
 
     total = delivery + subtotal
 
+    for item in cart_items.values():
+        item['total_per_quantity'] = item['price'] * item.get('quantity', 1)
+
     context = {
+        'cart_items': cart_items,
         'subtotal': subtotal,
         'delivery': delivery,
         'total': total,
