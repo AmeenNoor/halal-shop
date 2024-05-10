@@ -1,11 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Thanks......!!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="bg-light p-4">
+        <h2 class="mb-4">Thank You</h2>
+        <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+        
+        <div class="order-info mb-4">
+          <h4>Order Info:</h4>
+          <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+          <p><strong>Order Date:</strong> {{ order.date }}</p>
+        </div>
+        
+        <div class="order-details mb-4">
+          <h4>Order Details:</h4>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in order_items %}
+                <tr>
+                  <td>{{ item.product.name }}</td>
+                  <td>{{ item.quantity }}</td>
+                  <td>${{ item.product.price }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="delivering-to mb-4">
+          <h4>Delivering To:</h4>
+          <p><strong>Full Name:</strong> {{ order.full_name }}</p>
+          <p><strong>Address:</strong> {{ order.street_address1 }}{% if order.street_address2 %}, {{ order.street_address2 }}{% endif %}, {{ order.county }}, {{ order.town_or_city }}, {{ order.postcode }}</p>
+          <p><strong>Phone Number:</strong> {{ order.phone_number }}</p>
+        </div>
+        
+        <div class="billing-info mb-4">
+          <h4>Billing Info:</h4>
+          <p><strong>Order Subtotal:</strong> €{{ order_subtotal }}</p>
+          <p><strong>Delivery:</strong> €{{ delivery_fee }}</p>
+          <p><strong>Total:</strong> €{{ order.total }}</p>
+        </div>
+        
+        <div class="back-to-home text-center mb-4">
+          <a href="#" class="btn btn-primary">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
