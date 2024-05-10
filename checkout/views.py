@@ -1,31 +1,66 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.views.generic import CreateView, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CheckoutForm
-from cart.contexts import cart_total
+from .models import Order, OrderItem
 import stripe
 from django.conf import settings
 from django.urls import reverse
 from products.models import Product
+from django.contrib import messages
+from cart.contexts import cart_total
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+
 
 class CheckoutView(LoginRequiredMixin, CreateView):
     template_name = 'checkout.html'
     form_class = CheckoutForm
     success_url = '/checkout/success/'
 
-    def post(self, request, *args, **kwargs):
+    def form_valid(self, form):
+        order = form.save(commit=False)
+        order.user = self.request.user
+
+        cart_items = self.request.session.get('cart', {})
+        subtotal = sum(item['price'] * item.get('quantity', 1)
+                       for item in cart_items.values() if isinstance(item, dict))
+        delivery = subtotal * \
+            float(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        total = subtotal + delivery
+
+        order.subtotal = subtotal
+        order.total = total
+        order.delivery_fee = delivery
+        order.save()
+
         line_items = []
-        cart_items = request.session.get('cart', {})
+
         for item_id, item in cart_items.items():
+            try:
+                product = Product.objects.get(pk=item_id)
+            except Product.DoesNotExist:
+                messages.error(self.request, (
+                    "One of the products in your cart wasn't "
+                    "found in our database. "
+                    "Please call us for assistance!")
+                )
+                order.delete()
+                return redirect(reverse('cart'))
+
+            order_item = OrderItem.objects.create(
+                order=order,
+                product=product,
+                quantity=item['quantity']
+            )
+
             line_item = {
                 'price_data': {
                     'currency': settings.STRIPE_CURRENCY,
                     'product_data': {
-                        'name': item['name'],
+                        'name': product.name,
                     },
-                    'unit_amount': int(item['price'] * 100), 
+                    'unit_amount': int(item['price'] * 100),
                 },
                 'quantity': item['quantity'],
             }
@@ -35,18 +70,20 @@ class CheckoutView(LoginRequiredMixin, CreateView):
             payment_method_types=['card'],
             line_items=line_items,
             mode='payment',
-            success_url=request.build_absolute_uri(reverse('checkout_success')),
-            cancel_url=request.build_absolute_uri(reverse('checkout_cancel')),
+            success_url=self.request.build_absolute_uri(
+                reverse('checkout_success')),
+            cancel_url=self.request.build_absolute_uri(
+                reverse('checkout_cancel')),
         )
 
         return redirect(session.url)
 
+
 class CheckoutSuccessView(View):
-    def get(self, request): 
+    def get(self, request):
         return render(request, 'success.html')
+
 
 class CheckoutCancelView(View):
     def get(self, request):
         return render(request, 'cancel.html')
-
-
