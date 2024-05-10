@@ -29,7 +29,11 @@
                 <td>{{ item.quantity }}</td>
                 <td>$ {{ item.price }}</td>
                 <td>
+                  <form action="{% url 'cart_delete' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ item_id }}">
                     <button type="submit" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+                  </form>
                 </td>
               </tr>
               {% empty %}
