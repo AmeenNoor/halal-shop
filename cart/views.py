@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DeleteView
 from products.models import Product
 from django.contrib import messages
 
@@ -33,3 +33,13 @@ class CartListView(ListView):
     def get(self, request):
         cart_items = request.session.get('cart', {})
         return render(request, 'cart/cart.html', {'cart_items': cart_items})
+    
+class CartDeleteView(DeleteView):
+    def post(self, request):
+        product_id = request.POST.get('product_id')
+        cart_items = request.session.get('cart', {})
+        if product_id in cart_items:
+            del cart_items[product_id]
+            request.session['cart'] = cart_items
+            messages.success(request, "Item removed from cart.")
+        return redirect('cart')
