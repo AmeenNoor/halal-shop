@@ -24,6 +24,23 @@ class Order(models.Model):
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
+    
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+    
+    def calculate_subtotal(self):
+        """
+        Calculate subtotal of the order
+        """
+        order_items = OrderItem.objects.filter(order=self)
+        subtotal = Sum(item.product.price * item.quantity for item in order_items)
+        return subtotal
 
     def __str__(self):
         return self.order_number
