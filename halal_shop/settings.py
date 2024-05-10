@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'cart',
+    'checkout',
 
     #Other
     'storages',
@@ -81,6 +82,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
             os.path.join(BASE_DIR, 'products', 'templates', 'products'),
+            os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),
             
         ],
         'APP_DIRS': True,
