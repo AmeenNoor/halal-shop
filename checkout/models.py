@@ -41,6 +41,15 @@ class Order(models.Model):
         order_items = OrderItem.objects.filter(order=self)
         subtotal = Sum(item.product.price * item.quantity for item in order_items)
         return subtotal
+    
+    def calculate_total(self):
+        """
+        Calculate total of the order (subtotal + delivery_fee)
+        """
+        subtotal = self.calculate_subtotal()
+        delivery_fee = subtotal * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        total = subtotal + delivery_fee
+        return total
 
     def __str__(self):
         return self.order_number
