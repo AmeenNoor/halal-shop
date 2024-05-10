@@ -23,7 +23,7 @@
             <i class="fas fa-shopping-cart"></i> € <span id="cartTotal">{% if subtotal %}{{ subtotal|floatformat:2 }}{% else %}0.00{% endif %}</span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="cartDropdown">
-            <li><a class="dropdown-item" href="#">Checkout</a></li>
+            <li><a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a></li>
             <li><a class="dropdown-item" href="{% url 'cart' %}">View Cart</a></li>
           </ul>
         </li>
