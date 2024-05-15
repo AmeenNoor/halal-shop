@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView, LoginRequiredMixin
+from .models import UserProfile
 
-# Create your views here.
+class AccountView(LoginRequiredMixin, TemplateView):
+    model = UserProfile
+    template_name = 'profile.html'
