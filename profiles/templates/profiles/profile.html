@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Account Details!!!!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="bg-light p-4">
+
+                <div class="order-info mb-4">
+                    <h2 class="mb-4">Account Info:</h2>
+                    {% if user.email %}
+                    <div class="mb-3">
+                        <strong>Email:</strong> {{ user.email }}
+                    </div>
+                    {% endif %}
+                    <div class="mb-3">
+                        <strong>User Name:</strong> {{ user.username }}
+                    </div>
+                    <div>
+                        <strong>Password:</strong> <a href="#" class="text-decoration-none">Change Password</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
