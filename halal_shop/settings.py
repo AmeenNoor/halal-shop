@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-rp2gksx2dds.ws-eu111.gitpod.io']
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+    'profiles',
 
     #Other
     'storages',
