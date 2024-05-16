@@ -82,20 +82,24 @@
         <div class="col-lg-6">
           <h5>Contact Us</h5>
           <address>
-            <p><i class="fas fa-map-marker-alt"></i> 123 Street, Cityville, Country</p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:info@example.com">info@example.com</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Dublin, Ireland</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:info@example.com">info@halalshop.com</a></p>
             <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
           </address>
         </div>
 
         <!-- Social Media Icons -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 mb-4">
           <h5>Connect With Us</h5>
           <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+            aria-label="Visit our Facebook page"><i class="fab fa-facebook fa-lg me-3"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener"
+            aria-label="Visit our Twitter page"><i class="fab fa-twitter fa-lg me-3"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener"
+            aria-label="Visit our Instagram page"><i class="fab fa-instagram fa-lg me-3"></i></a>
+            <a href="https://ie.linkedin.com/" target="_blank" rel="noopener"
+            aria-label="Visit our Linkedin page"><i class="fab fa-linkedin fa-lg"></i></a>
           </div>
         </div>
 
@@ -103,9 +107,8 @@
         <div class="col-lg-2">
           <h5>Quick Links</h5>
           <ul class="list-unstyled">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'products' %}">Shop</a></li>
           </ul>
         </div>
       </div>
