@@ -85,7 +85,7 @@ Ameen Noor
 
 - #### Mobile
 
-<img src="https://github.com/AmeenNoor/halal-shop/blob/main/readme/ux/wireframes/mobile-home-page.png" alt="Desktop 1" width="270px" height="270px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/AmeenNoor/halal-shop/blob/main/readme/ux/wireframes/mobile-product-page.png" alt="Desktop 2" width="270px" height="270px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/AmeenNoor/halal-shop/blob/main/readme/ux/wireframes/mobile-product-detail-page.png" alt="Desktop 2" width="270px" height="270px">
+<img src="https://github.com/AmeenNoor/halal-shop/blob/main/readme/ux/wireframes/mobile-home-page.png" alt="Desktop 1" width="200px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/AmeenNoor/halal-shop/blob/main/readme/ux/wireframes/mobile-product-page.png" alt="Desktop 2" width="200px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://github.com/AmeenNoor/halal-shop/blob/main/readme/ux/wireframes/mobile-product-detail-page.png" alt="Desktop 2" width="200px">
 
 
 
