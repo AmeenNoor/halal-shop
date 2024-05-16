@@ -12,6 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from .models import Product
 from .forms import ProductForm
+from django.contrib import messages
 
 
 class ProductList(ListView):
@@ -37,6 +38,8 @@ class ProductList(ListView):
                 Q(name__icontains=search_query) | Q(
                     category__icontains=search_query)
             )
+        else:
+            messages.info(self.request, "Please enter a search query.")
 
         if sort_by == 'name_asc':
             queryset = queryset.order_by('name')
