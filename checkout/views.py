@@ -14,6 +14,10 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 class CheckoutView(LoginRequiredMixin, CreateView):
+    """
+    View to handle the checkout process.
+    """
+
     template_name = 'checkout.html'
     form_class = CheckoutForm
     success_url = '/checkout/success/'
@@ -80,6 +84,10 @@ class CheckoutView(LoginRequiredMixin, CreateView):
 
 
 class CheckoutSuccessView(View):
+    """
+    View to handle successful checkout.
+    """
+
     def get(self, request):
         order = Order.objects.filter(user=request.user).latest('date')
         context = {
@@ -93,5 +101,9 @@ class CheckoutSuccessView(View):
 
 
 class CheckoutCancelView(View):
+    """
+    View to handle checkout cancellation.
+    """
+    
     def get(self, request):
         return render(request, 'cancel.html')

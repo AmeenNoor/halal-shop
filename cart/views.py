@@ -5,6 +5,10 @@ from django.contrib import messages
 
 
 class CartAddView(CreateView):
+    """
+    View to add a product to the cart
+    """
+
     def post(self, request):
         product_id = request.POST.get('product_id')
         quantity = int(request.POST.get('quantity', 1))
@@ -30,11 +34,19 @@ class CartAddView(CreateView):
         return redirect('products')
 
 class CartListView(ListView):
+    """
+    View to display all items in the cart
+    """
+
     def get(self, request):
         cart_items = request.session.get('cart', {})
         return render(request, 'cart/cart.html', {'cart_items': cart_items})
     
 class CartDeleteView(DeleteView):
+    """
+    View to remove an item from the cart
+    """
+    
     def post(self, request):
         product_id = request.POST.get('product_id')
         cart_items = request.session.get('cart', {})
