@@ -171,11 +171,46 @@ Chosen images display halal-certified products and halal food, showing that the 
 
 ## Technologies Used
 ### Languages Used
-
-
+1. HTML
+2. CSS
+3. Python
    
 ### Frameworks, Tools, Libraries and Programs Used
+1. [Heroku](https://www.heroku.com/):
+   Heroku was employed for project deployment.
 
+2. [GitHub](https://github.com/):
+   GitHub was utilized to store the project file and folder remotely.
+
+3. [Git](https://git-scm.com/):
+   Git was used in the Gitpod terminal to add, commit, and then push the changes to GitHub.
+
+4. [CI's pep8 tool](https://pep8ci.herokuapp.com/):
+   CI's pep8 tool was used to ensure the code is valid and follows proper indentation
+
+5. [draw.io](https://app.diagrams.net/):
+   draw.io was used to craft the flowchart
+
+6. [Font Awesome](https://fontawesome.com/):
+   Font Awesome was used to incorporate social media and contact information icons, including icons for Facebook, Twitter, Youtube, Instagram, email and address.
+   
+7. [Google Fonts](https://fonts.google.com/):
+   Google fonts were used to import 'nanum myeongjo' & 'Rye' fonts into the style.css file which are used on all pages throughout the project.
+
+8. [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/):
+   Bootstrap was utilized for the styling and layout of the website.
+
+9. [Jigsaw](https://jigsaw.w3.org/css-validator/):
+   The CSS code of the website was tested using Jigsaw that provided by The World Wide Web Consortium (W3C).
+
+10. [Balsamiq](https://balsamiq.com/):
+   Balsamiq was used to create the mockup design for the website.
+
+11. [Django](https://www.djangoproject.com/):
+    Django was used to develop the backend, handling dynamic pages, URL routing, and database management.
+        
+12. [ElephantSQL](https://www.elephantsql.com/):
+    ElephantSQL Was used to host the PostgreSQL database.
 
 
 
