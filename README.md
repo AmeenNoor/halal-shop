@@ -265,7 +265,43 @@ To deploy the site using Visual Studio Code, follow these steps:
     **python3 manage.py runserver**
 
 ### Heroku
+To deploy the site on Heroku, follow these steps:
 
+1. Begin by forking the repository: <https://github.com/AmeenNoor/eire-bnb.git>.
+
+2. Log in to Heroku and click "New." Select "Create new app."(see screenshots below):
+
+![Deployment_1](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image1.png)
+
+3. Choose a unique name for your app, select your desired region, and then click "Create app." (see screenshot below):
+
+![Deployment_2](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image2.png)
+
+1. In the app settings, navigate to the "Config Vars" section. Set the environment variables directly on Heroku (see screenshots below):
+
+![Deployment_3](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image3.png)
+
+![Deployment_4](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image4.png)
+
+![Deployment_5](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image5.png)
+
+1. Under the "Buildpacks" section, click "Add buildpacks." Add "python" as buildpacks. Ensure that Python is selected first, followed by Node.js. Save your selections. (see screenshots below):
+
+![Deployment_6](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image6.png)
+
+![Deployment_7](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image7.png)
+
+1. In the "Deploy" section, choose "GitHub/Connect to GitHub" as your deployment method. Search for the project on GitHub and connect it. (see screenshots below):
+
+![Deployment_8](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image8.png)
+
+![Deployment_9](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image9.png)
+
+![Deployment_10](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image10.png)
+
+1. Finally, click "Deploy Branch" to deploy your project. (see screenshot below):
+
+![Deployment_11](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image11.png)
 
 
 ## Credits
