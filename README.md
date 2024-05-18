@@ -9,6 +9,10 @@ Ameen Noor
 
 Online Halal shop in Ireland, covering all regions of the country. Shop offers high-quality Halal-certified products, from fresh meats and groceries to household essentials. Browse the wide selection and enjoy the convenience of having authentic Halal items delivered to your door. Whether shopping for your family or stocking up on essentials, the shop provides a seamless and reliable shopping experience for all Halal needs.
 
+![Am I Responsive](https://github.com/AmeenNoor/halal-shop/blob/main/readme/responsive/am-i-responsive.png)
+
+Click [here](https://eire-bnb-01c201f35540.herokuapp.com/) to visit the website.
+
 
 
 
