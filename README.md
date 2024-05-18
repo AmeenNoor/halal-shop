@@ -454,9 +454,39 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 
 ### Fixing Bugs
 
+# E-commerce Business Model
 
-## Deployment
-### Local deployment
+The business model focuses on providing high-quality, halal-certified products to customers. Leveraging SEO strategies increases visibility and drives traffic to the site. Optimizing content with relevant keywords and meta tags aims to rank higher on search engines and attract more visitors.
+
+## Facebook Business Page
+
+![Facebook-1](https://github.com/AmeenNoor/halal-shop/blob/main/readme/facebook/facebook-1.png)
+
+![Facebook-2](https://github.com/AmeenNoor/halal-shop/blob/main/readme/facebook/facebook-2.png)
+
+![Facebook-3](https://github.com/AmeenNoor/halal-shop/blob/main/readme/facebook/facebook-3.png)
+
+- **Goals:**
+  - Build a strong community of followers.
+  - Share special content and promotions exclusive to our Facebook followers.
+
+- **Link:** [Halal Shop Facebook Page](https://www.facebook.com/profile.php?id=61560090561110)
+
+## SEO Strategy
+
+- **Keywords:** Short-tailed and long-tailed keywords were identified through research and analysis, aligning with user search intent for halal products.
+
+- **Description:** Meta description tags are used on each page, ensuring relevance and dynamic updates based on page content.
+
+- **Title:** Dynamic title tags in the `base.html` template can be customized for each page to enhance SEO.
+
+- **Sitemap:** The `sitemap.xml` file lists all site pages, facilitating easy crawling by search engines.
+
+- **Robots.txt:** The `robots.txt` file restricts search engines from indexing certain pages, such as authentication pages, ensuring only relevant content is searchable.
+
+
+# Deployment
+## Local deployment
 To deploy the site using Visual Studio Code, follow these steps:
 
 1. **Clone the Repository:**
@@ -485,7 +515,7 @@ To deploy the site using Visual Studio Code, follow these steps:
     * Start the Django server:
     **python3 manage.py runserver**
 
-### Heroku
+## Heroku
 To deploy the site on Heroku, follow these steps:
 
 1. Begin by forking the repository: <https://github.com/AmeenNoor/eire-bnb.git>.

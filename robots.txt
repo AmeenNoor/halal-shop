@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /accounts/
+Sitemap: https://halal-shop-fb24ef103af0.herokuapp.com/sitemap.xml
