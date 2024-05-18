@@ -219,9 +219,14 @@ Chosen images display halal-certified products and halal food, showing that the 
 # Testing
 ## Validation Testing
 ### CSS Validator
+Validation testing was performed using Jigsaw to ensure code quality. Here is the validation testing results:
+
+![CSS Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/css/css-test.png)
+
 ### HTML Validator
 ### JS validation
 ### CI's pep8 tool
+Validation testing was performed using CI's PEP8 tool to ensure code quality. Here are the validation testing results for each file:
 
 #### halal-shop app:
 - **views.py**
