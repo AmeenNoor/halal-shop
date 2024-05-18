@@ -203,13 +203,16 @@ Chosen images display halal-certified products and halal food, showing that the 
 9. [Jigsaw](https://jigsaw.w3.org/css-validator/):
    The CSS code of the website was tested using Jigsaw that provided by The World Wide Web Consortium (W3C).
 
-10. [Balsamiq](https://balsamiq.com/):
+10. [Jshint](https://jshint.com/):
+   Jshint was used to validate javascript code.
+
+11. [Balsamiq](https://balsamiq.com/):
    Balsamiq was used to create the mockup design for the website.
 
-11. [Django](https://www.djangoproject.com/):
+12. [Django](https://www.djangoproject.com/):
     Django was used to develop the backend, handling dynamic pages, URL routing, and database management.
         
-12. [ElephantSQL](https://www.elephantsql.com/):
+13. [ElephantSQL](https://www.elephantsql.com/):
     ElephantSQL Was used to host the PostgreSQL database.
 
 
@@ -224,7 +227,14 @@ Validation testing was performed using Jigsaw to ensure code quality. Here is th
 ![CSS Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/css/css-test.png)
 
 ### HTML Validator
-### JS validation
+### JS Validation
+Validation testing was performed using JSHint to ensure code quality. Here is the validation testing results:
+
+- **quantity input**
+![Quantity Input Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/js/quantity-input.png)
+- **stripe**
+![Stripe Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/js/stripe.png)
+
 ### CI's pep8 tool
 Validation testing was performed using CI's PEP8 tool to ensure code quality. Here are the validation testing results for each file:
 
