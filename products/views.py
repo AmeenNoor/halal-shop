@@ -64,6 +64,7 @@ class ProductDetail(DetailView):
     template_name = 'product_detail.html'
     context_object_name = 'product'
 
+
 class ProductCreate(LoginRequiredMixin, CreateView):
     """
     View to create a new product
@@ -74,6 +75,7 @@ class ProductCreate(LoginRequiredMixin, CreateView):
     template_name = 'product_create.html'
     success_url = reverse_lazy('products')
 
+
 class ProductUpdate(LoginRequiredMixin, UpdateView):
     """
     View to update an existing product
@@ -83,6 +85,7 @@ class ProductUpdate(LoginRequiredMixin, UpdateView):
     form_class = ProductForm
     template_name = 'product_update.html'
     success_url = reverse_lazy('products')
+
 
 class ProductDelete(LoginRequiredMixin, DeleteView):
     """

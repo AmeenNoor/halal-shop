@@ -28,7 +28,8 @@ class CheckoutView(LoginRequiredMixin, CreateView):
 
         cart_items = self.request.session.get('cart', {})
         subtotal = sum(item['price'] * item.get('quantity', 1)
-                       for item in cart_items.values() if isinstance(item, dict))
+                       for item in cart_items.values()
+                       if isinstance(item, dict))
         delivery = subtotal * \
             float(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         total = subtotal + delivery
@@ -92,7 +93,7 @@ class CheckoutSuccessView(View):
         order = Order.objects.filter(user=request.user).latest('date')
         context = {
             'order': order,
-            'order_items': order.items.all(), 
+            'order_items': order.items.all(),
             'order_subtotal': order.subtotal,
             'delivery_fee': order.delivery_fee,
         }
@@ -104,6 +105,6 @@ class CheckoutCancelView(View):
     """
     View to handle checkout cancellation.
     """
-    
+
     def get(self, request):
         return render(request, 'cancel.html')

@@ -216,12 +216,60 @@ Chosen images display halal-certified products and halal food, showing that the 
 
 
 
-## Testing
-### Validation Testing
+# Testing
+## Validation Testing
+### CSS Validator
+### HTML Validator
+### JS validation
+### CI's pep8 tool
 
+#### halal-shop app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/halal-shop-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/halal-shop-urls.png)
 
-1. #### admin.py
+#### home app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/home-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/home-urls.png)
 
+#### products app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/products-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/products-urls.png)
+- **models.py**
+![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/products-models.png)
+- **forms.py**
+![Forms](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/products-forms.png)
+
+#### cart app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/cart-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/cart-urls.png)
+- **contexts.py**
+![Contexts](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/cart-contexts.png)
+
+#### checkout app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/checkout-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/checkout-urls.png)
+- **models.py**
+![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/checkout-models.png)
+- **forms.py**
+![Forms](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/checkout-forms.png)
+
+#### profiles app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-urls.png)
+- **models.py**
+![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-models.png)
 
 
 ### Compatibility and Responsive Testing

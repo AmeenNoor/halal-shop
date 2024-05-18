@@ -29,7 +29,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com', '8000-ameennoor-halalshop-rp2gksx2dds.ws-eu111.gitpod.io']
+ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com',
+                 '8000-ameennoor-halalshop-rp2gksx2dds.ws-eu114.gitpod.io']
 
 
 # Application definition
@@ -51,7 +52,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
 
-    #Other
+    # Other
     'storages',
     'crispy_forms',
     'crispy_bootstrap5',
@@ -83,7 +84,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'products', 'templates', 'products'),
             os.path.join(BASE_DIR, 'checkout', 'templates', 'checkout'),
             os.path.join(BASE_DIR, 'profiles', 'templates', 'profiles'),
-            
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -229,4 +230,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-

@@ -5,9 +5,10 @@ import uuid
 from django.db.models import Sum
 from django.conf import settings
 
+
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    order_number = models.CharField(max_length=32, null=False, editable=False) 
+    order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -17,16 +18,19 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    delivery_fee = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    subtotal = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    delivery_fee = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0)
+    subtotal = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
+    total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
         """
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
-    
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -35,15 +39,16 @@ class Order(models.Model):
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
-    
+
     def calculate_subtotal(self):
         """
         Calculate subtotal of the order
         """
         order_items = OrderItem.objects.filter(order=self)
-        subtotal = Sum(item.product.price * item.quantity for item in order_items)
+        subtotal = Sum(item.product.price *
+                       item.quantity for item in order_items)
         return subtotal
-    
+
     def calculate_total(self):
         """
         Calculate total of the order (subtotal + delivery_fee)
@@ -56,8 +61,10 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order, related_name='items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 

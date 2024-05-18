@@ -33,6 +33,7 @@ class CartAddView(CreateView):
         messages.success(request, f"{product.name} added to cart.")
         return redirect('products')
 
+
 class CartListView(ListView):
     """
     View to display all items in the cart
@@ -41,12 +42,13 @@ class CartListView(ListView):
     def get(self, request):
         cart_items = request.session.get('cart', {})
         return render(request, 'cart/cart.html', {'cart_items': cart_items})
-    
+
+
 class CartDeleteView(DeleteView):
     """
     View to remove an item from the cart
     """
-    
+
     def post(self, request):
         product_id = request.POST.get('product_id')
         cart_items = request.session.get('cart', {})
