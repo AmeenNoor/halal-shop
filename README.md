@@ -11,7 +11,7 @@ Online Halal shop in Ireland, covering all regions of the country. Shop offers h
 
 ![Am I Responsive](https://github.com/AmeenNoor/halal-shop/blob/main/readme/responsive/am-i-responsive.png)
 
-Click [here](https://eire-bnb-01c201f35540.herokuapp.com/) to visit the website.
+Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the website.
 
 
 
@@ -36,9 +36,6 @@ Click [here](https://eire-bnb-01c201f35540.herokuapp.com/) to visit the website.
   - [Database Choice](#database-choice)
   - [Data Models](#data-models)
 - [Agile Process](#agile-process)
-  - [GitHub User Stories](#github-user-stories)
-  - [Iterations](#iterations)
-  - [Progress Boards](#progress-boards)
 - [Features](#features)
   - [Implemented Features](#implemented-features)
   - [Future Features](#future-features)
@@ -107,7 +104,7 @@ Click [here](https://eire-bnb-01c201f35540.herokuapp.com/) to visit the website.
 - As a Site Visitor I can view products by category so that I can explore items within specific product categories
 - As a Site Visitor I can filter products based on different criteria so that I can narrow down my product search
 - As a Site Visitor I can add products to my cart so that I can keep track of items I intend to purchase
-- [#18](https://github.com/AmeenNoor/halal-shop/issues/18)As a Site Visitor I can edit products in my cart before proceeding to payment so that I can customize my order according to my preferences
+- As a Site Visitor I can edit products in my cart before proceeding to payment so that I can customize my order according to my preferences
 - As a Site Visitor I can view the contents of my cart so that I can review the items I have added before proceeding to checkout
 - As a Site Visitor I can preview the order summary before proceeding to checkout so that I can review the total costs and items in my cart
 - As a Site Visitor I can proceed to checkout and complete my purchase so that I can finalize my order and make payment
@@ -233,6 +230,34 @@ PostgreSQL was chosen as the database for its relational data model. Additionall
 - **CREATE:** Handled when an order is created.
 - **READ:** Accessed through the order's related items.
 
+
+# Agile Process
+
+Project follows an Agile development approach, focusing on iterative development and incremental improvements to deliver value to users in successive releases.
+
+## User Stories
+User stories are used to capture requirements and drive development. They are classified into four categories: **Must-Have**, **Should-Have**, **Could-Have**, and **Won't Have**.
+
+## Epics
+Epics represent high-level features of the project. Each epic consists of several user stories that collectively deliver the desired functionality.
+
+### Epics Summary:
+- **[EPIC:Project Setup and Configuration](https://github.com/AmeenNoor/halal-shop/issues/28)**
+- **[EPIC: User Authentication and Account Management](https://github.com/AmeenNoor/halal-shop/issues/29)**
+- **[EPIC: Product Management](https://github.com/AmeenNoor/halal-shop/issues/30)**
+- **[EPIC: Product Catalog and Browsing ](https://github.com/AmeenNoor/halal-shop/issues/31)**
+- **[EPIC: Shopping Cart and Checkout](https://github.com/AmeenNoor/halal-shop/issues/32)**
+
+## Iterative Development
+Development is organized into iterations, with each iteration focusing on specific features or functionalities. User stories are grouped into iterations based on their priority and dependencies.
+
+### Iterations Summary:
+- **[Iteration 0: Project Setup](https://github.com/AmeenNoor/halal-shop/milestone/2?closed=1)**
+- **[Iteration 1: Product Browsing](https://github.com/AmeenNoor/halal-shop/milestone/3?closed=1)**
+- **[Iteration 2: User Authentication](https://github.com/AmeenNoor/halal-shop/milestone/4?closed=1)**
+- **[Iteration 3: Product Management](https://github.com/AmeenNoor/halal-shop/milestone/5)**
+- **[Iteration 4: Shopping Cart](https://github.com/AmeenNoor/halal-shop/milestone/6?closed=1)**
+- **[Iteration 5: Account Management](https://github.com/AmeenNoor/halal-shop/milestone/7?closed=1)**
 
 # Features
 
