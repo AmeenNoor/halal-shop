@@ -220,6 +220,24 @@ Chosen images display halal-certified products and halal food, showing that the 
 
 
 # Testing
+## Cross Browser and Cross Device Testing
+The website was tested on various browsers and devices to ensure compatibility and optimal user experience. The testing process yielded successful results for most browsers and devices. See table and screenshots below:
+
+<div align="center">
+
+| Device                    | Browser         | OS       | Screen Width | Status |
+| ------------------------- | --------------- | -------- | ------------ | ------ |
+| dev tools: iPhone SE      | Chrome          | iOS      | 375 x 667    | ✔      |
+| dev tools: iPhone 12      | Chrome          | iOS      | 390 x 844    | ✔      |
+| dev tools: iPad Air       | Chrome          | iOS      | 820 x 1180   | ✔      |
+| dev tools: Galaxy S8      | Chrome          | Android  | 362 x 740    | ✔      |
+| real computer: Toshiba    | Microsoft Edge  | Windows 10 | 1366 x 768  | ✔      |
+| real computer: Toshiba    | Firefox         | Ubuntu 22.04 | 1920 x 1080 | ✔      |
+| real computer: MacBook Pro 13" | Safari    | iOS      | 1920 x 1080  |  ✔     |
+| real mobile phone: iPhone 7 Plus | Safari    | iOS      | 1920 x 1080  |  ✔     |
+
+</div>
+
 ## Validation Testing
 ### CSS Validator
 Validation testing was performed using Jigsaw to ensure code quality. Here is the validation testing results:
@@ -229,25 +247,25 @@ Validation testing was performed using Jigsaw to ensure code quality. Here is th
 ### HTML Validator
 Validation testing was performed to ensure code quality. Here are the validation testing results:
 
-- ***Home Page**
+- **Home Page**
 ![Home Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/home-error.png)
 
 ![Home Fixed](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/home-error-fixed.png)
 
-- ***Product Page**
+- **Product Page**
 ![Product Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-error.png)
 
 ![Product Fixed](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-error-fixed.png)
 
-- ***Product Detail Page**
+- **Product Detail Page**
 ![Product Detail Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-detail-error.png)
 
 ![Product Detail Fixed](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-detail-error-fixed.png)
 
-- ***Cart Page**
+- **Cart Page**
 ![Cart Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/cart.png)
 
-- ***Checkout Page**
+- **Checkout Page**
 ![Checkout Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/checkout.png)
 
 ### JS Validation
