@@ -154,16 +154,84 @@ Chosen images display halal-certified products and halal food, showing that the 
 
 
 
-## Information Architecture
-### Entity Relationship Diagram
+# Information Architecture
+## Entity Relationship Diagram
 
+![Entity Relationship Diagram](https://github.com/AmeenNoor/halal-shop/blob/main/readme/data/output.png)
 
+## Database Choice
+PostgreSQL was chosen as the database for its relational data model. Additionally, Heroku provides PostgreSQL support out-of-the-box, making it easy to deploy and manage the application without incurring additional costs.
 
-### Database Choice
+## Data Models
 
+### Product Model
 
-### Data Models
+### Fields:
+- `name`: CharField (max_length=250)
+- `description`: TextField
+- `price`: DecimalField (max_digits=10, decimal_places=2)
+- `category`: CharField (max_length=250) with choices for different categories
+- `image`: ImageField (optional, null=True, blank=True)
 
+### Accessors:
+- `get_name()`: Returns the name of the product.
+- `get_description()`: Returns the description of the product.
+- `get_price()`: Returns the price of the product.
+- `get_category_display()`: Returns name of the category.
+- `get_image_url()`: Returns the URL of the product image.
+
+### Operations:
+- **CREATE:** Handled by ProductCreate view.
+- **READ:** Handled by ProductList and ProductDetail views.
+- **UPDATE:** Handled by ProductUpdate view.
+- **DELETE:** Handled by ProductDelete view.
+
+## Order Model
+
+### Fields:
+- `user`: ForeignKey to User model (on_delete=models.CASCADE)
+- `order_number`: CharField (max_length=32)
+- `full_name`: CharField (max_length=50)
+- `email`: EmailField (max_length=254)
+- `phone_number`: CharField (max_length=20)
+- `postcode`: CharField (max_length=20, optional)
+- `town_or_city`: CharField (max_length=40)
+- `street_address1`: CharField (max_length=80)
+- `street_address2`: CharField (max_length=80, optional)
+- `county`: CharField (max_length=80, optional)
+- `date`: DateTimeField (auto_now_add=True)
+- `delivery_fee`: DecimalField (max_digits=6, decimal_places=2)
+- `subtotal`: DecimalField (max_digits=10, decimal_places=2)
+- `total`: DecimalField (max_digits=10, decimal_places=2)
+
+### Accessors:
+- `get_order_number()`: Returns the order number.
+- `get_full_name()`: Returns the full name of the customer.
+- `get_email()`: Returns the email of the customer.
+- `get_phone_number()`: Returns the phone number of the customer.
+- `get_date()`: Returns the date of the order.
+- `calculate_subtotal()`: Calculates the subtotal of the order.
+- `calculate_total()`: Calculates the total of the order (subtotal + delivery_fee).
+
+### Operations:
+- **CREATE:** Handled by CheckoutView view.
+- **READ:** Handled by OrderHistoryView view.
+
+### OrderItem Model
+
+### Fields:
+- `order`: ForeignKey to Order model (related_name='items', on_delete=models.CASCADE)
+- `product`: ForeignKey to Product model (on_delete=models.CASCADE)
+- `quantity`: PositiveIntegerField (default=1)
+
+### Accessors:
+- `get_order()`: Returns the order to which the item belongs.
+- `get_product()`: Returns the product associated with the item.
+- `get_quantity()`: Returns the quantity of the product in the order item.
+
+### Operations:
+- **CREATE:** Handled when an order is created.
+- **READ:** Accessed through the order's related items.
 
 
 ## Features
