@@ -26,7 +26,6 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
   - [Target Audience](#target-audience)
   - [Goals](#goals)
   - [User Stories](#user-stories)
-  - [Initial Stories](#initial-stories)
   - [Feasibility vs Importance](#feasibility-vs-importance)
   - [Scope](#scope)
   - [Design Choices](#design-choices)
@@ -46,8 +45,6 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
   - [Cross Browser and Cross Device Testing](#cross-browser-and-cross-device-testing)
   - [Accessibility Testing](#accessibility-testing)
   - [Validation Testing](#validation-testing)
-  - [Manual Testing](#manual-testing)
-  - [Accessibility Testing](#accessibility-testing)
   - [Defects](#defects)
 - [E-commerce Business Model](#e-commerce-business-model)
   - [Facebook Business Page](#facebook-business-page)
@@ -127,6 +124,62 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
 - As an Admin User I can remove products from the website so that I can manage the product catalog and remove outdated or discontinued items
 
 ## Feasibility vs Importance
+
+To scope the project for an MVP (minimally viable product), a feasibility analysis was conducted.
+
+
+| Opportunity/Feature                       | Feasibility/Viability (score out of 5) | Purpose Level of Importance (score out of 5) | In Or Out |
+|-------------------------------------------|----------------------------------------|---------------------------------------------|-----------|
+| Register for an account                   | 5                                      | 5                                           | In        |
+| Browse through a variety of products      | 5                                      | 5                                           | In        |
+| View detailed information about a product | 5                                      | 5                                           | In        |
+| Search for products                       | 4                                      | 5                                           | In        |
+| View products by category                 | 5                                      | 5                                           | In        |
+| Filter products based on different criteria | 4                                      | 5                                           | In        |
+| Add products to cart                      | 5                                      | 5                                           | In        |
+| Edit products in cart                     | 5                                      | 4                                           | In        |
+| View contents of cart                     | 5                                      | 5                                           | In        |
+| Preview order summary                     | 5                                      | 5                                           | In        |
+| Proceed to checkout and complete purchase | 4                                      | 5                                           | In        |
+| Log in to account                         | 5                                      | 5                                           | In        |
+| Log out of account                        | 5                                      | 5                                           | In        |
+| Change account password                   | 5                                      | 5                                           | In        |
+| Recover account password                  | 5                                      | 5                                           | In        |
+| View account details                      | 5                                      | 4                                           | In        |
+| Fill out checkout form                    | 5                                      | 5                                           | In        |
+| Make payment for order securely           | 4                                      | 5                                           | In        |
+| Receive confirmation of order             | 5                                      | 5                                           | In        |
+| Add new products                          | 5                                      | 5                                           | In        |
+| Edit existing products                    | 5                                      | 5                                           | In        |
+| Remove products                           | 5                                      | 4                                           | In        |
+| User Reviews and Ratings                  | 3                                      | 3                                           | OUT       |
+| Wishlist Functionality                    | 3                                      | 3                                           | OUT       |
+| Order Tracking                            | 3                                      | 4                                           | OUT       |
+| Promotions and Discounts                  | 3                                      | 4                                           | OUT       |
+| Multi-language Support                    | 2                                      | 2                                           | OUT       |
+
+This table shows the importance features based on their feasibility and importance.
+
+## Scope
+
+To focus on creating a functional MVP, the scope has been narrowed to essential features only. Advanced functionalities and less critical features are excluded to ensure feasibility and maintainability. The goal is to implement basic, high-impact features.
+
+- **In Scope:**
+  - User registration and login
+  - Browsing and viewing products
+  - Adding products to cart
+  - Viewing and editing cart contents
+  - Basic product search and category view
+  - Simple checkout process with order confirmation
+
+- **Out of Scope (Future Features):**
+  - User Reviews and Ratings
+  - Wishlist Functionality
+  - Order Tracking
+  - Promotions and Discounts
+  - Multi-language Support
+
+The approach ensures that the MVP is both achievable and provides value to users.
 
 
 
@@ -479,10 +532,11 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 ![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-models.png)
 
 
-### Manual Testing
 
-
-### Fixing Bugs
+## Defects
+- **[Empty Cart Displays 'Proceed to Checkout' Button](https://github.com/AmeenNoor/halal-shop/issues/35)**
+- **[Previous Messages Stay When New Notifications Show Up](https://github.com/AmeenNoor/halal-shop/issues/34)**
+- **[Footer Position Fluctuates with Page Content](https://github.com/AmeenNoor/halal-shop/issues/33)**
 
 # E-commerce Business Model
 
@@ -587,6 +641,8 @@ To deploy the site on Heroku, follow these steps:
 
 # Credits
 - The GitHub repository was created using the "Code Institute template." You can find the template at: [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template).
+
+- The concepts for toast notifications, 404 & 500 error pages, Allauth integration, and the profile app were adopted from the [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1).
 
 - The carousel/slideshow code in use has been adapted by [W3Schools](https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_carousel2).
    
