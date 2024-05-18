@@ -234,12 +234,55 @@ PostgreSQL was chosen as the database for its relational data model. Additionall
 - **READ:** Accessed through the order's related items.
 
 
-## Features
-### Implemented Features
+# Features
+
+## Implemented Features
+
+1. **Responsive Design**
+   - Webside is designed to be fully responsive, ensuring an optimal viewing experience across various devices, including desktops, tablets, and mobile phones.
+
+2. **Navigation**
+   - The header includes navigation links, providing easy access to different sections of the website.
+
+3. **Product Listings**
+   - The main content area displays a list of products, each represented as a card. Products include an image, name, price, and category for quick reference. Users can click on "More Details" to view additional information about each product.
+
+4. **Cart Functionality**
+   - Users can add products to their cart directly from the product listings or detail pages.
+
+5. **Checkout Process**
+   - Checkout process allows users to finalize their purchase. This includes filling out necessary information, reviewing the order summary, and making payments.
+
+6. **User Authentication**
+   - Users can create accounts, log in, and log out. Authentication is required for certain actions like adding products to the cart and checking out.
+
+7. **Order Management**
+   - Users can view their past orders and order details through their profile. Each order includes information such as order number, product details, subtotal, delivery fee, and total amount.
+
+8. **Administrative Functions**
+   - Admin users can create, update, and delete products through dedicated admin views.
+
+9. **Error Handling**
+    - Custom 404 and 500 error pages have been implemented to handle page-not-found and server errors.
+
+## Future Features
+
+1. **User Reviews and Ratings**
+   - Allow users to leave reviews and ratings for products they have purchased.
+
+2. **Wishlist Functionality**
+   - Introduce a wishlist feature that allows users to save products they are interested in for future purchase.
+
+3. **Order Tracking**
+   - Provide users with the ability to track the status of their orders in real-time.
+
+4. **Promotions and Discounts**
+   - Introduce features for promotional codes and discounts, allowing users to apply special offers during checkout.
+
+5. **Multi-language Support**
+   - Implement multi-language support to cater to a wider audience, allowing users to navigate and use the website in their preferred language.
 
 
-
-### Future Features
 
 
 ## Technologies Used
@@ -404,10 +447,6 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 ![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-urls.png)
 - **models.py**
 ![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-models.png)
-
-
-### Compatibility and Responsive Testing
-
 
 
 ### Manual Testing
