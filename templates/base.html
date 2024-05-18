@@ -46,31 +46,35 @@
     {% include 'includes/bottom_navbar.html' %}
   </header>
 
-  {% if messages %}
-  <div class="message-container">
-    <div class="toast-container end-0">
-      <div class="toast show">
-        {% for message in messages %}
-        {% with message.level as level %}
-        {% if level == 40 %}
-        {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-        {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-        {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-        {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-        {% endwith %}
-        {% endfor %}
+    {% if messages %}
+    <div class="message-container">
+      <div class="toast-container end-0">
+        <div class="toast show">
+          {% for message in messages %}
+            {% with message.level as level %}
+              {% if forloop.first %}
+                {% if level == 40 %}
+                  {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                  {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                  {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                  {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+              {% endif %}
+            {% endwith %}
+          {% endfor %}
+        </div>
       </div>
     </div>
-  </div>
-  {% endif %}
+    {% endif %}
+
+  
   <div class="top-div">
-  {% block content %}
-  <!-- Main Content -->
-  {% endblock %}
+    {% block content %}
+    <!-- Main Content -->
+    {% endblock %}
   </div>
 
 
