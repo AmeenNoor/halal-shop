@@ -50,6 +50,7 @@ Click [here](https://eire-bnb-01c201f35540.herokuapp.com/) to visit the website.
   - [Accessibility Testing](#accessibility-testing)
   - [Validation Testing](#validation-testing)
   - [Manual Testing](#manual-testing)
+  - [Accessibility Testing](#accessibility-testing)
   - [Defects](#defects)
 - [E-commerce Business Model](#e-commerce-business-model)
   - [Facebook Business Page](#facebook-business-page)
@@ -241,6 +242,11 @@ The website was tested on various browsers and devices to ensure compatibility a
 | real mobile phone: iPhone 7 Plus | Safari    | iOS      | 1920 x 1080  |  ✔     |
 
 </div>
+
+## Accessibility Testing
+Accessibility testing was done on the website, and Lighthouse, a testing tool, was used for this purpose. The Lighthouse report, displayed in the provided screenshot.
+
+![CSS Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/accessibility/accessibility.png)
 
 ## Validation Testing
 ### CSS Validator
