@@ -95,7 +95,7 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
 - Keep Improving: Always look for ways to make the website better based on feedback and new ideas.
 
 ## User Stories
-- #### Site Visitor
+### Site Visitor
 
 - As a Site Visitor I can register for an account so that I can access additional features
 - As a Site Visitor I can browse through a variety of products so that I can find items that interest me
@@ -109,7 +109,7 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
 - As a Site Visitor I can preview the order summary before proceeding to checkout so that I can review the total costs and items in my cart
 - As a Site Visitor I can proceed to checkout and complete my purchase so that I can finalize my order and make payment
 
-- #### Registered User
+### Registered User
 
 - As a Registered User I can log in to my account so that I can access personalized content and manage my account
 - As a Registered User I can log out of my account so that I can ensure secure access and protect my privacy
@@ -120,7 +120,7 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
 - As a Registered User I can make payment for my order securely so that I can complete the purchase
 - As a Registered User I can receive confirmation of my order so that I can have assurance that my order has been processed successfully
 
-- #### Admin User
+### Admin User
 
 - As an Admin User I can add new products to the website so that I can expand the product catalog and offer more options to users
 - As an Admin user I can edit existing products so that I can update product information and maintain accuracy
@@ -128,7 +128,7 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
 
 ## Feasibility vs Importance
 
-## Scope
+
 
 ## Design Choices
 - #### Colors
@@ -351,10 +351,15 @@ Development is organized into iterations, with each iteration focusing on specif
    Balsamiq was used to create the mockup design for the website.
 
 12. [Django](https://www.djangoproject.com/):
-    Django was used to develop the backend, handling dynamic pages, URL routing, and database management.
+   Django was used to develop the backend, handling dynamic pages, URL routing, and database management.
         
 13. [ElephantSQL](https://www.elephantsql.com/):
-    ElephantSQL Was used to host the PostgreSQL database.
+   ElephantSQL Was used to host the PostgreSQL database.
+
+14. [w3c Markup Validator](https://validator.w3.org/):
+   was used to validate code
+
+15. [AWS S3 and IAM](https://eu-north-1.console.aws.amazon.com/console/home?region=eu-north-1) was used to host static and media files
 
 
 
@@ -580,18 +585,21 @@ To deploy the site on Heroku, follow these steps:
 ![Deployment_11](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image11.png)
 
 
-## Credits
-### Code
+# Credits
+- The GitHub repository was created using the "Code Institute template." You can find the template at: [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template).
 
-
-
-### Content
-
-
+- The carousel/slideshow code in use has been adapted by [W3Schools](https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_carousel2).
    
-### Media
-
-
+- The responsive image is generated using the [Am I Responsive](https://ui.dev/amiresponsive) tool.
    
-### Mentor
+- The color scheme image is sourced from [Coolors](https://coolors.co/).
+
+- The social media icons are sourced from [FontAwesome](https://fontawesome.com/).
+
+- The fonts 'Rye' and 'Nanum Myeongjo' are sourced from [Google Fonts](https://fonts.google.com/).
+   
+- Website images are sourced from [Unsplash](https://unsplash.com/)
+   
+## Mentor
+Huge thanks to my mentor **"Malia Havlicek"** for her support and guidance.
 
