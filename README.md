@@ -227,8 +227,31 @@ Validation testing was performed using Jigsaw to ensure code quality. Here is th
 ![CSS Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/css/css-test.png)
 
 ### HTML Validator
+Validation testing was performed to ensure code quality. Here are the validation testing results:
+
+- ***Home Page**
+![Home Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/home-error.png)
+
+![Home Fixed](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/home-error-fixed.png)
+
+- ***Product Page**
+![Product Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-error.png)
+
+![Product Fixed](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-error-fixed.png)
+
+- ***Product Detail Page**
+![Product Detail Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-detail-error.png)
+
+![Product Detail Fixed](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/product-detail-error-fixed.png)
+
+- ***Cart Page**
+![Cart Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/cart.png)
+
+- ***Checkout Page**
+![Checkout Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/html/checkout.png)
+
 ### JS Validation
-Validation testing was performed using JSHint to ensure code quality. Here is the validation testing results:
+Validation testing was performed using JSHint to ensure code quality. Here are the validation testing results:
 
 - **quantity input**
 ![Quantity Input Test](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/js/quantity-input.png)
