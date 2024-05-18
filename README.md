@@ -172,7 +172,7 @@ To focus on creating a functional MVP, the scope has been narrowed to essential 
   - Basic product search and category view
   - Simple checkout process with order confirmation
 
-- **Out of Scope (Future Features):**
+- **Out of Scope:**
   - User Reviews and Ratings
   - Wishlist Functionality
   - Order Tracking
@@ -602,7 +602,7 @@ To deploy the site using Visual Studio Code, follow these steps:
 ## Heroku
 To deploy the site on Heroku, follow these steps:
 
-1. Begin by forking the repository: <https://github.com/AmeenNoor/eire-bnb.git>.
+1. Begin by forking the repository: <https://github.com/AmeenNoor/halal-shop>.
 
 2. Log in to Heroku and click "New." Select "Create new app."(see screenshots below):
 

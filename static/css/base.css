@@ -56,8 +56,9 @@ body {
 /*----------------------------------------------------------------------------*/
 
 .custom-product-image {
-    max-width: 100px !important;
+    width: 100px !important;
     height: 80px !important;
+    object-fit: cover;
 }
 
 /*----------------------------------------------------------------------------*/

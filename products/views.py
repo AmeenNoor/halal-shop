@@ -38,8 +38,8 @@ class ProductList(ListView):
                 Q(name__icontains=search_query) | Q(
                     category__icontains=search_query)
             )
-        else:
-            messages.info(self.request, "Please enter a search query.")
+        # else:
+        #     messages.info(self.request, "Please enter a search query.")
 
         if sort_by == 'name_asc':
             queryset = queryset.order_by('name')
