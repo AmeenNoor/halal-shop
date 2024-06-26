@@ -9,6 +9,8 @@ from .models import Order, OrderItem
 from products.models import Product
 from django.contrib import messages
 from cart.contexts import cart_total
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -97,6 +99,17 @@ class CheckoutSuccessView(View):
             'order_subtotal': order.subtotal,
             'delivery_fee': order.delivery_fee,
         }
+        email_body = render_to_string('checkout/confirmation_emails/confirmation_email_body.txt', context)
+        
+        # Send the email
+        send_mail(
+            subject=f'Order Confirmation - {order.order_number}',
+            message=email_body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[order.user.email],
+            fail_silently=False,
+        )
+
         request.session['cart'] = {}
         return render(request, 'success.html', context)
 
