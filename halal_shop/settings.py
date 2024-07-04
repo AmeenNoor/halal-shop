@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['halal-shop-fb24ef103af0.herokuapp.com',
-                 '8000-ameennoor-halalshop-qrj79ciymy8.ws-eu114.gitpod.io',]
+                 '127.0.0.1',]
 
 
 # Application definition
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'profiles',
+    'subscription',
 
     # Other
     'storages',

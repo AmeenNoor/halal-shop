@@ -105,6 +105,18 @@
             <a href="https://ie.linkedin.com/" target="_blank" rel="noopener"
             aria-label="Visit our Linkedin page"><i class="fab fa-linkedin fa-lg"></i></a>
           </div>
+
+          <div class="newsletter mt-3">
+            <h5>Subscribe to Our Newsletter</h5>
+            <form method="post" action="{% url 'subscribe' %}">
+              {% csrf_token %}
+              <div class="input-group">
+                <input type="email" name="email" class="form-control" placeholder="Enter your email" aria-label="Email" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+          
         </div>
 
         <!-- Quick Links -->
