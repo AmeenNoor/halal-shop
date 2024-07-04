@@ -4,3 +4,4 @@ We will keep you updated with the latest news and offers.
 
 Best regards,
 The Halal Shop Team
+https://halal-shop-fb24ef103af0.herokuapp.com/
