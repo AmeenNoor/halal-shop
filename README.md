@@ -49,15 +49,11 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
 - [E-commerce Business Model](#e-commerce-business-model)
   - [Facebook Business Page](#facebook-business-page)
   - [Newsletter Signup](#newsletter-signup)
-  - [Links](#links)
   - [SEO Strategy](#seo-strategy)
 - [Deployment](#deployment)
   - [Local deployment](#local-deployment)
   - [Heroku](#heroku)
 - [Credits](#credits)
-  - [Code](#code)
-  - [Content](#content)
-  - [Media](#media)
   - [Mentor](#mentor)
 
 
@@ -555,6 +551,14 @@ The business model focuses on providing high-quality, halal-certified products t
   - Share special content and promotions exclusive to our Facebook followers.
 
 - **Link:** [Halal Shop Facebook Page](https://www.facebook.com/profile.php?id=61560090561110)
+
+## Newsletter Signup
+
+![Newsletter](https://github.com/AmeenNoor/halal-shop/blob/main/readme/facebook/newsletter.png)
+
+- **Goals:**
+  - **Build Email Subscriber Base:** Increase the number of subscribers to our newsletter, allowing direct communication with interested customers.
+  - **Customer Relationships:** Provide exclusive updates, promotions, and content directly to subscribers.
 
 ## SEO Strategy
 
