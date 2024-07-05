@@ -528,6 +528,14 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 - **models.py**
 ![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/profiles-models.png)
 
+#### subscription app:
+- **views.py**
+![Views](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/subscription-views.png) 
+- **urls.py**
+![URLS](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/subscription-urls.png)
+- **models.py**
+![Models](https://github.com/AmeenNoor/halal-shop/blob/main/readme/testing/validation_testing/python/subscription-models.png)
+
 ## Manual Testing
 
 
