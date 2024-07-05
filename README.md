@@ -557,6 +557,7 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 - **[Empty Cart Displays 'Proceed to Checkout' Button](https://github.com/AmeenNoor/halal-shop/issues/35)**
 - **[Previous Messages Stay When New Notifications Show Up](https://github.com/AmeenNoor/halal-shop/issues/34)**
 - **[Footer Position Fluctuates with Page Content](https://github.com/AmeenNoor/halal-shop/issues/33)**
+- **[Sending Email Results in Error 500](https://github.com/AmeenNoor/halal-shop/issues/36)**
 
 # E-commerce Business Model
 
