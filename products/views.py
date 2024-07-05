@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import (
     TemplateView,
     ListView,
@@ -8,7 +8,7 @@ from django.views.generic import (
     DeleteView,
 )
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from .models import Product
 from .forms import ProductForm
@@ -65,7 +65,17 @@ class ProductDetail(DetailView):
     context_object_name = 'product'
 
 
-class ProductCreate(LoginRequiredMixin, CreateView):
+class AdminRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        messages.error(
+            self.request, "You do not have permission to access this page.")
+        return redirect('products')
+
+
+class ProductCreate(LoginRequiredMixin, AdminRequiredMixin, CreateView):
     """
     View to create a new product
     """
@@ -76,7 +86,7 @@ class ProductCreate(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('products')
 
 
-class ProductUpdate(LoginRequiredMixin, UpdateView):
+class ProductUpdate(LoginRequiredMixin, AdminRequiredMixin, UpdateView):
     """
     View to update an existing product
     """
@@ -87,7 +97,7 @@ class ProductUpdate(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('products')
 
 
-class ProductDelete(LoginRequiredMixin, DeleteView):
+class ProductDelete(LoginRequiredMixin, AdminRequiredMixin, DeleteView):
     """
     View to delete an existing product
     """

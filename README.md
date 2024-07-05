@@ -566,6 +566,7 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 - **[Previous Messages Stay When New Notifications Show Up](https://github.com/AmeenNoor/halal-shop/issues/34)**
 - **[Footer Position Fluctuates with Page Content](https://github.com/AmeenNoor/halal-shop/issues/33)**
 - **[Sending Email Results in Error 500](https://github.com/AmeenNoor/halal-shop/issues/36)**
+- **[Unauthorized Access to Product Management Pages](https://github.com/AmeenNoor/halal-shop/issues/37)**
 
 # E-commerce Business Model
 
