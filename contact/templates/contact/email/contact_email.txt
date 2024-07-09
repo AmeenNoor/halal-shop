@@ -1,0 +1,15 @@
+Hello,
+
+We have received your enquiry from our website contact form:
+
+Name: {{ name }}
+Email: {{ email }}
+
+Message:
+{{ message }}
+
+Thank you for reaching out to us! We will review your message and get back to you shortly.
+
+Best regards,
+The Halal Shop Team
+https://halal-shop-fb24ef103af0.herokuapp.com/
