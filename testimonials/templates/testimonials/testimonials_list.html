@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="bg-light p-4">
+        <h2 class="text-center mb-4">Customer Testimonials</h2>
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border border-primary">
+                    <div class="card-body d-flex flex-column">
+                        <p class="card-text mb-4">{{ testimonial.feedback }}</p>
+                        <div class="mt-auto">
+                            <p class="card-title mb-1"><strong>Name:</strong> {{ testimonial.name }}</p>
+                            <p class="card-subtitle text-muted"><strong>Location:</strong> {{ testimonial.location }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info text-center">No testimonials yet.</div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr>
+        <br>
+        <h2 class="text-center mb-4">Submit Your Testimonial</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

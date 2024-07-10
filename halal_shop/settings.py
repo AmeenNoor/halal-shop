@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'profiles',
     'subscription',
     'contact',
+    'testimonials',
 
     # Other
     'storages',
