@@ -7,6 +7,11 @@ from django.conf import settings
 
 
 class Order(models.Model):
+    STATUS_CHOICES = (
+        ('Pending', 'Pending'),
+        ('Paid', 'Paid'),
+        ('Failed', 'Failed'),
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
@@ -27,6 +32,8 @@ class Order(models.Model):
     original_cart = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(
         max_length=254, null=False, blank=False, default='')
+    status = models.CharField(
+        max_length=20, choices=STATUS_CHOICES, default='Pending')
 
     def _generate_order_number(self):
         """
