@@ -127,7 +127,7 @@ class CheckoutSuccessView(LoginRequiredMixin, View):
         if 'cart' in request.session:
             del request.session['cart']
         
-        email_body = render_to_string('checkout/confirmation_emails/payment_confirmation_email.txt', {'order': order})
+        email_body = render_to_string('checkout/confirmation_emails/confirmation_email_body.txt', {'order': order})
         send_mail(
             subject=f'Payment Confirmation - {order.order_number}',
             message=email_body,
