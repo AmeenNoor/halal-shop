@@ -10,9 +10,7 @@ from .models import Order, OrderItem
 from products.models import Product
 from cart.contexts import cart_total
 import stripe
-from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
+
 
 stripe_public_key = settings.STRIPE_PUBLIC_KEY
 stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -129,49 +127,6 @@ class CheckoutSuccessView(LoginRequiredMixin, View):
         if 'cart' in request.session:
             del request.session['cart']
         
-        context = {
-            'order': order,
-        }
-
-        return render(request, 'checkout/success.html', context)
-
-@csrf_exempt
-def stripe_webhook(request):
-    payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    event = None
-
-    try:
-        event = stripe.Webhook.construct_event(
-            payload, sig_header, settings.STRIPE_WH_SECRET
-        )
-    except ValueError as e:
-        return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
-        return HttpResponse(status=400)
-
-    # Handle the event
-    if event['type'] == 'payment_intent.succeeded':
-        payment_intent = event['data']['object']
-        handle_payment_intent_succeeded(payment_intent)
-    elif event['type'] == 'payment_intent.payment_failed':
-        payment_intent = event['data']['object']
-        handle_payment_intent_failed(payment_intent)
-    else:
-        return HttpResponse(status=400)
-
-    return HttpResponse(status=200)
-
-def handle_payment_intent_succeeded(payment_intent):
-    """
-    Handle successful payment intent events from Stripe.
-    """
-    stripe_pid = payment_intent['id']
-    try:
-        order = Order.objects.get(stripe_pid=stripe_pid)
-        order.status = 'Paid'
-        order.save()
-
         email_body = render_to_string('checkout/confirmation_emails/payment_confirmation_email.txt', {'order': order})
         send_mail(
             subject=f'Payment Confirmation - {order.order_number}',
@@ -180,17 +135,9 @@ def handle_payment_intent_succeeded(payment_intent):
             recipient_list=[order.user.email],
             fail_silently=False,
         )
-    except Order.DoesNotExist:
-        pass
 
-def handle_payment_intent_failed(payment_intent):
-    """
-    Handle failed payment intent events from Stripe.
-    """
-    stripe_pid = payment_intent['id']
-    try:
-        order = Order.objects.get(stripe_pid=stripe_pid)
-        order.status = 'Failed'
-        order.save()
-    except Order.DoesNotExist:
-        pass
+        context = {
+            'order': order,
+        }
+
+        return render(request, 'checkout/success.html', context)

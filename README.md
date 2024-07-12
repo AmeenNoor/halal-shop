@@ -47,6 +47,7 @@ Click [here](https://halal-shop-fb24ef103af0.herokuapp.com/) to visit the websit
   - [Validation Testing](#validation-testing)
   - [Manual Testing](#manual-testing)
   - [Defects](#defects)
+  - [Defects of Note](#defects-of-note)
 - [E-commerce Business Model](#e-commerce-business-model)
   - [Facebook Business Page](#facebook-business-page)
   - [Newsletter Signup](#newsletter-signup)
@@ -568,6 +569,10 @@ Validation testing was performed using CI's PEP8 tool to ensure code quality. He
 - **[Sending Email Results in Error 500](https://github.com/AmeenNoor/halal-shop/issues/36)**
 - **[Unauthorized Access to Product Management Pages](https://github.com/AmeenNoor/halal-shop/issues/37)**
 
+## Defects of Note
+
+Currently, users can successfully make purchases online using our application, which is functioning smoothly overall. However, certain unforeseen events during the payment process may occasionally disrupt the flow. Due to time constraints, webhooks have not been implemented to handle such scenarios. Implementing webhooks in the future will ensure that payment events are reliably processed, maintaining a seamless experience for our customers.
+
 # E-commerce Business Model
 
 The business model focuses on providing high-quality, halal-certified products to customers. Leveraging SEO strategies increases visibility and drives traffic to the site. Optimizing content with relevant keywords and meta tags aims to rank higher on search engines and attract more visitors.
@@ -637,44 +642,52 @@ To deploy the site using Visual Studio Code, follow these steps:
     * Start the Django server:
     **python3 manage.py runserver**
 
-## Heroku
+## Heroku Deployment
+
 To deploy the site on Heroku, follow these steps:
 
-1. Begin by forking the repository: <https://github.com/AmeenNoor/halal-shop>.
+1. **Create a Heroku App:**
+   * Log in to Heroku.
+   * From the Heroku Dashboard, click New and then Create New App.
+   * Choose a unique name and region, then click Create app.
 
-2. Log in to Heroku and click "New." Select "Create new app."(see screenshots below):
+2. **Set Up Environment Variables:**
+   * Go to the Settings tab of your Heroku app.
+   * Click Reveal Config Vars and enter the following:
+      * `DATABASE_URL`
+      * `SECRET_KEY`: Set a secret key for Django.
+      * `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`: From your AWS S3 credentials.
+      * `STRIPE_PUBLIC_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`: From your Stripe account.
 
-![Deployment_1](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image1.png)
+3 **Configure Django Settings:**
+   * In your Django project's `settings.py`:
+      * `# Database configuration`
+      * `import dj_database_url`
+      * `DATABASES = {`
+      * `'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))`
+      * `}`
+      * `# AWS S3 settings`
+      * `AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'`
+      * `AWS_S3_REGION_NAME = 'your-bucket-region'`
+      * `AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')`
+      * `AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')`
+      * `STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'`
+      * `MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'`
+      * `DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'`
+      * `# Stripe settings`
+      * `STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')`
+      * `STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')`
+      * `STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET')`
 
-3. Choose a unique name for your app, select your desired region, and then click "Create app." (see screenshot below):
+4 **Static Files and Media Configuration:**
+   * Create a bucket in AWS S3 for your static and media files.
+   * Configure CORS, static website hosting, and permissions in the AWS S3 dashboard.
 
-![Deployment_2](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image2.png)
+5 **Deploy to Heroku:**
+   * Add, commit, and push your changes to GitHub.
+   * Connect your GitHub repository to Heroku in the Deploy tab.
+   * Deploy your branch and monitor the build logs for any errors.
 
-1. In the app settings, navigate to the "Config Vars" section. Set the environment variables directly on Heroku (see screenshots below):
-
-![Deployment_3](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image3.png)
-
-![Deployment_4](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image4.png)
-
-![Deployment_5](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image5.png)
-
-1. Under the "Buildpacks" section, click "Add buildpacks." Add "python" as buildpacks. Ensure that Python is selected first, followed by Node.js. Save your selections. (see screenshots below):
-
-![Deployment_6](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image6.png)
-
-![Deployment_7](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image7.png)
-
-1. In the "Deploy" section, choose "GitHub/Connect to GitHub" as your deployment method. Search for the project on GitHub and connect it. (see screenshots below):
-
-![Deployment_8](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image8.png)
-
-![Deployment_9](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image9.png)
-
-![Deployment_10](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image10.png)
-
-1. Finally, click "Deploy Branch" to deploy your project. (see screenshot below):
-
-![Deployment_11](https://github.com/AmeenNoor/eire-bnb/blob/main/media/deployment/deployment-image11.png)
 
 
 # Credits
