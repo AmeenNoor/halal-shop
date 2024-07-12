@@ -1,0 +1,87 @@
+/* checkout.css */
+
+/* Stripe Elements Styles */
+#card-element {
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 150ms ease;
+}
+
+#card-element.focus {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 4px 6px 0 rgba(39, 142, 229, 0.2);
+}
+
+#card-element.invalid {
+    border-color: #fa755a;
+}
+
+#card-errors {
+    font-size: 14px;
+    color: #fa755a;
+    margin-top: 12px;
+}
+
+/* Submit Button */
+#submit-button {
+    margin-top: 16px;
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Other Custom Styles */
+.container {
+    margin-top: 20px;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mb-4 {
+    margin-bottom: 4px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .col-lg-6 {
+        width: 100%;
+    }
+}

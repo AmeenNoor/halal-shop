@@ -1,23 +1,25 @@
+from decimal import Decimal
 from django.conf import settings
 
-
 def cart_total(request):
-    cart_items = request.session.get('cart', {})
-    subtotal = sum(item['price'] * item.get('quantity', 1)
-                   for item in cart_items.values() if isinstance(item, dict))
+    cart = request.session.get('cart', {})
+    subtotal = sum(Decimal(item['price']) * item['quantity'] for item in cart.values())
+    delivery = subtotal * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE) / Decimal(100)
+    total = subtotal + delivery
 
-    delivery = subtotal * float(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+    cart_items = []
+    for item_id, item_data in cart.items():
+        item_data['total_per_quantity'] = item_data['price'] * item_data['quantity']
+        cart_items.append({
+            'id': item_id,
+            'name': item_data['name'],
+            'quantity': item_data['quantity'],
+            'total_per_quantity': item_data['total_per_quantity'],
+        })
 
-    total = delivery + subtotal
-
-    for item in cart_items.values():
-        item['total_per_quantity'] = item['price'] * item.get('quantity', 1)
-
-    context = {
+    return {
         'cart_items': cart_items,
         'subtotal': subtotal,
         'delivery': delivery,
         'total': total,
     }
-
-    return context

@@ -27,7 +27,7 @@
                 </tr>
               </thead>
               <tbody>
-                {% for item in order_items %}
+                {% for item in order.items.all %}
                 <tr>
                   <td>{{ item.product.name }}</td>
                   <td>{{ item.quantity }}</td>
@@ -48,8 +48,8 @@
         
         <div class="billing-info mb-4">
           <h4>Billing Info:</h4>
-          <p><strong>Order Subtotal:</strong> €{{ order_subtotal }}</p>
-          <p><strong>Delivery:</strong> €{{ delivery_fee }}</p>
+          <p><strong>Order Subtotal:</strong> €{{ order.subtotal }}</p>
+          <p><strong>Delivery:</strong> €{{ order.delivery_fee }}</p>
           <p><strong>Total:</strong> €{{ order.total }}</p>
         </div>
         
